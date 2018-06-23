@@ -1,6 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
+import io.qt.BudgetApp.backend 1.0
 
 Window {
     id: window
@@ -8,6 +9,10 @@ Window {
     width: 480
     height: 680
     title: qsTr("Main Window")
+
+    BackEnd {
+        id: backend
+    }
 
     Text {
         id: textCurrentBalanceLabel
@@ -48,10 +53,11 @@ Window {
             y: 0
             width: 284
             height: 52
-            text: qsTr("")
+            text: backend.purchaseAmount
             horizontalAlignment: Text.AlignHCenter
             font.pointSize: 32
-            placeholderText: "Purchase Amount"
+            placeholderText: qsTr("Purchase Amount")
+            onTextChanged: backend.purchaseAmount = text
         }
     }
 
@@ -65,5 +71,6 @@ Window {
         font.pointSize: 32
         anchors.horizontalCenter: parent.horizontalCenter
         enabled: true
+        //OnClicked:perform calculation to remove amount
     }
 }
