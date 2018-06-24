@@ -7,19 +7,27 @@
 class Backend : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString purchaseAmount READ getPurchaseAmount WRITE setPurchaseAmount NOTIFY purchaseAmountChanged)
+    Q_PROPERTY(double purchaseAmount READ getPurchaseAmount WRITE setPurchaseAmount NOTIFY purchaseAmountChanged)
+    Q_PROPERTY(double balanceAmount READ getBalanceAmount WRITE setBalanceAmount NOTIFY balanceAmountChanged)
 
 public:
     explicit Backend(QObject *parent = nullptr);
 
-    QString getPurchaseAmount();
-    void setPurchaseAmount(const QString &purchaseAmount);
+    double getPurchaseAmount();
+    void setPurchaseAmount(const double &purchaseAmount);
+
+    double getBalanceAmount();
+    void setBalanceAmount(const double &balanceAmount);
+
 
 signals:
     void purchaseAmountChanged();
+    void balanceAmountChanged();
 
 private:
-    QString m_purchaseAmount;
+    double m_purchaseAmount = 0.0;
+    double m_balanceAmount = 200.0;
 };
 
 #endif // BACKEND_H
+

@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QSettings>
 
 #include "backend.h"
 
@@ -8,6 +9,11 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
+    QCoreApplication::setOrganizationName("MySoft");
+    QCoreApplication::setOrganizationDomain("mysoft.com");
+    QCoreApplication::setApplicationName("Star Runner");
+    ...
+    QSettings settings; //default constructor
 
     qmlRegisterType<Backend>("io.qt.BudgetApp.backend", 1, 0, "BackEnd");
 
