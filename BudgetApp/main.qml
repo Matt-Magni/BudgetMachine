@@ -44,6 +44,8 @@ Window {
         width: 284
         height: 52
         color: "#ffffff"
+        anchors.bottom: buttonAddPurchase.top
+        anchors.bottomMargin: 7
         anchors.verticalCenterOffset: 84
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
@@ -57,6 +59,8 @@ Window {
             width: 284
             height: 52
             text: Number(backend.purchaseAmount)
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 0
             horizontalAlignment: Text.AlignHCenter
             font.pointSize: 32
             placeholderText: qsTr("Purchase Amount")
@@ -77,6 +81,8 @@ Window {
             width: 284
             height: 48
             text: qsTr("Add Purchase")
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 175
             anchors.horizontalCenterOffset: 0
             font.pointSize: 32
             anchors.horizontalCenter: parent.horizontalCenter
@@ -87,12 +93,23 @@ Window {
 
         Button {
             id: buttonReset
-            x: 361
-            y: 51
             text: qsTr("Reset")
-            anchors.horizontalCenterOffset: 0
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 45
+            anchors.left: parent.left
+            anchors.leftMargin: 30
             onClicked: backend.balanceAmount = 200.00
+        }
+
+        Button {
+            id: buttonAddFunds
+            x: 229
+            text: qsTr("Add Funds")
+            anchors.top: parent.top
+            anchors.topMargin: 45
+            anchors.right: parent.right
+            anchors.rightMargin: 30
+            onClicked: backend.balanceAmount = backend.balanceAmount + 200
         }
 }
 
