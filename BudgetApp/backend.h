@@ -3,6 +3,9 @@
 
 #include <QObject>
 #include <QString>
+#include <QSettings>
+
+#define DEFAULT_BALANCE 200.0
 
 class Backend : public QObject
 {
@@ -25,8 +28,12 @@ signals:
     void balanceAmountChanged();
 
 private:
-    double m_purchaseAmount = 0.0;
-    double m_balanceAmount = 200.0;
+    void saveBalanceAmount();
+    void loadBalanceAmount();
+
+    double m_purchaseAmount;
+    double m_balanceAmount;
+    QSettings m_settings;
 };
 
 #endif // BACKEND_H

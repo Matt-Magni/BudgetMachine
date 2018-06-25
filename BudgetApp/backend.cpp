@@ -2,7 +2,11 @@
 
 Backend::Backend(QObject *parent) :
     QObject(parent)
+  , m_purchaseAmount(0)
+  , m_balanceAmount(200)
+  , m_settings("MagniSoft", "BudgetApp")
 {
+    loadBalanceAmount();
 }
 
 double Backend::getPurchaseAmount()
@@ -31,6 +35,23 @@ void Backend::setBalanceAmount(const double &balanceAmount)
 
     m_balanceAmount = balanceAmount;
     emit balanceAmountChanged();
+    saveBalanceAmount();
 }
 
+void Backend::saveBalanceAmount()
+{
+    m_settings.setValue("balance", m_balanceAmount);
+}
+void Backend::loadBalanceAmount()
+{
+    if (m_settings.contains("balance"))
+    {
+        m_balanceAmount = m_settings.value("balance").toDouble();
+    }
+    else
+    {
+        m_balanceAmount  = DEFAULT_BALANCE;
+    }
+
+}
 
