@@ -39,17 +39,14 @@ Window {
 
     Rectangle {
         id: rectangle
-        x: 252
-        y: 614
+        x: 38
+        y: 491
         width: 284
         height: 52
         color: "#ffffff"
-        anchors.bottom: buttonAddPurchase.top
-        anchors.bottomMargin: 7
-        anchors.verticalCenterOffset: 84
-        anchors.horizontalCenterOffset: 0
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 137
+        anchors.horizontalCenter: buttonAddPurchase.horizontalCenter
         border.color: "#7d7d7d"
 
         TextField {
@@ -59,6 +56,7 @@ Window {
             width: 284
             height: 52
             text: Number(backend.purchaseAmount)
+            anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 0
             horizontalAlignment: Text.AlignHCenter
@@ -77,12 +75,12 @@ Window {
         Button {
             id: buttonAddPurchase
             x: 98
-            y: 456
+            y: 560
             width: 284
             height: 48
             text: qsTr("Add Purchase")
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 175
+            anchors.bottomMargin: 72
             anchors.horizontalCenterOffset: 0
             font.pointSize: 32
             anchors.horizontalCenter: parent.horizontalCenter
@@ -101,6 +99,10 @@ Window {
             onClicked: backend.balanceAmount = 200.00
         }
 
+        function updateAddFunds() {
+            backend.bankAmount = backend.bankAmount + backend.balanceAmount
+            backend.balanceAmount = 200
+    }
         Button {
             id: buttonAddFunds
             x: 229
@@ -109,7 +111,28 @@ Window {
             anchors.topMargin: 45
             anchors.right: parent.right
             anchors.rightMargin: 30
-            onClicked: backend.balanceAmount = backend.balanceAmount + 200
+            onClicked: updateAddFunds()
+
+        }
+
+        Text {
+            id: text1
+            x: 118
+            y: 392
+            width: 100
+            height: 40
+            text: qsTr("Bank:")
+            font.pixelSize: 28
+        }
+
+        Text {
+            id: textBankAmount
+            x: 194
+            y: 392
+            width: 45
+            height: 31
+            text: backend.bankAmount
+            font.pixelSize: 28
         }
 }
 

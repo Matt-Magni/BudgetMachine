@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.6.2, 2018-06-24T22:11:37. -->
+<!-- Written by QtCreator 4.6.2, 2018-07-01T12:22:44. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -8,7 +8,7 @@
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
-  <value type="int">1</value>
+  <value type="int">0</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.EditorSettings</variable>
@@ -319,7 +319,7 @@
     </valuemap>
     <value type="QString" key="Ios.run_arguments"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Run on matthew’s iPhone</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Run BudgetApp on matthew’s iPhone</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Run  on matthew’s iPhone</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.IosRunConfiguration:/Users/matthewmagni/Documents/Development/iOS/Qt/BudgetAppTop/BudgetApp/BudgetApp.pro</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
@@ -585,7 +585,7 @@
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">BudgetApp.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory"></value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">/Users/matthewmagni/Documents/Development/iOS/Qt/BudgetAppTop/build-BudgetApp-Desktop_Qt_5_11_0_clang_64bit-Debug/BudgetApp.app/Contents/MacOS</value>
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">/Users/matthewmagni/Documents/Development/iOS/Qt/BudgetAppTop/build-BudgetApp-Qt_5_11_0_for_iOS-Debug/BudgetApp.app/Contents/MacOS</value>
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
